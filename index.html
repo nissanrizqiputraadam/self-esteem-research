@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website penelitian tentang pengaruh self esteem terhadap krisis identitas diri pada remaja dewasa awal">
+    <title>Pengaruh Self Esteem terhadap Krisis Identitas Diri pada Remaja Dewasa Awal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #6b8cbc;
+            --accent: #ff6b6b;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --text: #333333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+        }
+
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(74, 111, 165, 0.05), rgba(107, 140, 188, 0.05));
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: var(--text);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+        }
+
+        section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .assessment {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .assessment:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .assessment h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .assessment p {
+            margin-bottom: 1rem;
+        }
+
+        .intervention-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            margin-bottom: 1.5rem;
+        }
+
+        .resources {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .resources h3 {
+            color: var(--primary);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .resources h3:first-child {
+            margin-top: 0;
+        }
+
+        .resources ul {
+            list-style-position: inside;
+            margin-left: 1rem;
+        }
+
+        .resources li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .resources li:hover {
+            background-color: var(--light);
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">SelfEsteem & Identitas</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#assessment">Assessment</a></li>
+                        <li><a href="#intervention">Intervensi</a></li>
+                        <li><a href="#resources">Sumber Daya</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Pengaruh Self Esteem terhadap Krisis Identitas Diri pada Remaja Dewasa Awal</h1>
+            <p>Website ini menyediakan informasi, assessment, dan intervensi untuk memahami hubungan antara self esteem dan krisis identitas pada remaja dewasa awal.</p>
+            <a href="#assessment" class="btn">Mulai Assessment</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Penelitian</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Penelitian ini bertujuan untuk menganalisis hubungan antara self esteem (harga diri) dengan krisis identitas diri pada individu dalam fase remaja dewasa awal (18-25 tahun).</p>
+                    <p>Fase remaja dewasa awal merupakan periode transisi penting dimana individu menghadapi berbagai tantangan dalam pembentukan identitas diri. Self esteem yang rendah seringkali dikaitkan dengan kesulitan dalam proses pembentukan identitas yang sehat.</p>
+                    <p>Melalui website ini, kami menyediakan alat assessment untuk mengukur tingkat self esteem dan krisis identitas, serta memberikan intervensi berbasis bukti untuk membantu meningkatkan kesejahteraan psikologis.</p>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <p>🧠 Self Esteem & Identitas 💭</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="assessment">
+        <div class="container">
+            <h2 class="section-title">Assessment Self Esteem & Identitas</h2>
+            
+            <div class="assessment">
+                <h3>📋 Skala Self Esteem Rosenberg</h3>
+                <p>Assessment ini mengukur tingkat self esteem Anda berdasarkan Skala Rosenberg yang telah divalidasi secara luas.</p>
+                <p>Terdiri dari 10 pertanyaan yang akan membantu memahami persepsi Anda terhadap diri sendiri.</p>
+                <a href="#" class="btn" onclick="alert('Assessment akan segera tersedia. Terima kasih atas minat Anda!'); return false;">Mulai Assessment Self Esteem</a>
+            </div>
+            
+            <div class="assessment">
+                <h3>🎯 Kuesioner Krisis Identitas</h3>
+                <p>Assessment ini dirancang untuk mengidentifikasi tingkat krisis identitas yang mungkin Anda alami.</p>
+                <p>Melalui serangkaian pertanyaan, kami akan membantu Anda memahami tantangan dalam pembentukan identitas diri.</p>
+                <a href="#" class="btn" onclick="alert('Assessment akan segera tersedia. Terima kasih atas minat Anda!'); return false;">Mulai Assessment Identitas</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="intervention">
+        <div class="container">
+            <h2 class="section-title">Program Intervensi</h2>
+            <div class="intervention-cards">
+                <div class="card">
+                    <h3>🧩 Terapi Kognitif-Perilaku</h3>
+                    <p>Program intervensi berbasis CBT untuk mengubah pola pikir negatif yang mempengaruhi self esteem dan identitas diri.</p>
+                    <a href="#" class="btn" onclick="alert('Informasi lebih lanjut akan segera tersedia!'); return false;">Pelajari Lebih Lanjut</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🧘 Pelatihan Mindfulness</h3>
+                    <p>Teknik mindfulness untuk meningkatkan kesadaran diri dan penerimaan, membantu proses pembentukan identitas yang sehat.</p>
+                    <a href="#" class="btn" onclick="alert('Informasi lebih lanjut akan segera tersedia!'); return false;">Pelajari Lebih Lanjut</a>
+                </div>
+                
+                <div class="card">
+                    <h3>💬 Konseling Individu</h3>
+                    <p>Sesi konseling personal dengan ahli untuk membahas tantangan spesifik dalam self esteem dan identitas diri.</p>
+                    <a href="#" class="btn" onclick="alert('Informasi lebih lanjut akan segera tersedia!'); return false;">Pelajari Lebih Lanjut</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources">
+        <div class="container">
+            <h2 class="section-title">Sumber Daya & Referensi</h2>
+            <div class="resources">
+                <h3>📚 Artikel & Jurnal</h3>
+                <ul>
+                    <li>Erikson, E.H. (1968). Identity: Youth and Crisis.</li>
+                    <li>Rosenberg, M. (1965). Society and the Adolescent Self-Image.</li>
+                    <li>Marcia, J.E. (1966). Development and validation of ego-identity status.</li>
+                    <li>Waterman, A.S. (1982). Identity development from adolescence to adulthood.</li>
+                </ul>
+                
+                <h3>📖 Buku Rekomendasi</h3>
+                <ul>
+                    <li>The Gifts of Imperfection by Brené Brown</li>
+                    <li>Mindset: The New Psychology of Success by Carol S. Dweck</li>
+                    <li>The Six Pillars of Self-Esteem by Nathaniel Branden</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📧 Kontak</h3>
+                    <p>Email: info@selfesteem-identitas.com</p>
+                    <p>Telepon: (021) 1234-5678</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>🔗 Tautan Cepat</h3>
+                    <p><a href="#home">Beranda</a></p>
+                    <p><a href="#about">Tentang</a></p>
+                    <p><a href="#assessment">Assessment</a></p>
+                    <p><a href="#intervention">Intervensi</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>⚠️ Disclaimer</h3>
+                    <p>Website ini ditujukan untuk tujuan edukasi dan penelitian. Untuk masalah kesehatan mental yang serius, silakan berkonsultasi dengan profesional.</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Pengaruh Self Esteem terhadap Krisis Identitas Diri pada Remaja Dewasa Awal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
